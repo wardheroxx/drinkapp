@@ -9,7 +9,7 @@ public class FirebaseServices {
         private static FirebaseServices instance;
         private FirebaseAuth auth;
         private FirebaseFirestore fire;
-        private FirebaseStorage storage;
+        private FirebaseStorage storage; //addewkh
 
     public FirebaseAuth getAuth() {
         return auth;
