@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="etUsernameSignup" type="id" />
+    <item name="etPasswordSignup" type="id" />
+    <item name="tvRestAllRest" type="id" />
+</resources>

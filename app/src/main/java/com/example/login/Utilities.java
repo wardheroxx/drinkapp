@@ -5,50 +5,60 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.login.MainActivity;
-
-public class Utilities {
-
-   import android.widget.Toast;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+//public class Utilities {
 
-    public static class UtilitiesClass {
+  // public static Utilities getInstance() {
+ //   }
+
+    //public boolean validatePassword(SignUpActivity signUpActivity, String password) {
+ //   }
+
+
+    public class UtilitiesClass {
         //singleton instance
         private static UtilitiesClass instance;
+
         //c'tor
-        public UtilitiesClass()
-        {
+        public UtilitiesClass() {
 
         }
 
         public static UtilitiesClass getInstance() {
-            if (instance==null)
-                instance=new UtilitiesClass();
+            if (instance == null)
+                instance = new UtilitiesClass();
             return instance;
         }
 
-        public boolean validatePassword(AppCompatActivity activity,String passowrd){
+        public boolean validatePassword(AppCompatActivity activity, String passowrd) {
             //password length min 8 , max 30
-            if(!(passowrd.length()>8&&passowrd.length()<=30))
-            {
+            if (!(passowrd.length() > 8 && passowrd.length() <= 30)) {
                 Toast.makeText(activity, "Incorrect Username or password", Toast.LENGTH_SHORT).show();
                 return false;
             }
             //min 1 capital , 1 small , 1 number
-            int numbercount =0;
+            int numbercount = 0;
             int capitalCount = 0;
-            int smallCount=0;
-            int wildCardCount=0;
+            int smallCount = 0;
+            int wildCardCount = 0;
 
-            for(int i =0; i<=passowrd.length();i++)
-            {
-                if(passowrd.charAt(i)>= '0' && passowrd.charAt(i) <= '9') { numbercount++;}
-                if (passowrd.charAt(i)>= 'a' && passowrd.charAt(i) <= 'z'){ smallCount++;}
-                if (passowrd.charAt(i)>= 'A' && passowrd.charAt(i) <= 'Z'){ capitalCount++;}
-                if (passowrd.charAt(i)>= 33 && passowrd.charAt(i) <= 64){ wildCardCount++;}
+            for (int i = 0; i <= passowrd.length(); i++) {
+                if (passowrd.charAt(i) >= '0' && passowrd.charAt(i) <= '9') {
+                    numbercount++;
+                }
+                if (passowrd.charAt(i) >= 'a' && passowrd.charAt(i) <= 'z') {
+                    smallCount++;
+                }
+                if (passowrd.charAt(i) >= 'A' && passowrd.charAt(i) <= 'Z') {
+                    capitalCount++;
+                }
+                if (passowrd.charAt(i) >= 33 && passowrd.charAt(i) <= 64) {
+                    wildCardCount++;
+                }
 
-                if (!(numbercount>=1&&smallCount>=1&&capitalCount>=1&&wildCardCount>=1))
-                {
+                if (!(numbercount >= 1 && smallCount >= 1 && capitalCount >= 1 && wildCardCount >= 1)) {
                     Toast.makeText(activity, "Incorrect Username or password", Toast.LENGTH_SHORT).show();
                     return false;
                 }
@@ -56,7 +66,7 @@ import androidx.appcompat.app.AppCompatActivity;
             return true;
         }
 
-        public boolean validateEmail(AppCompatActivity activity,String email){
+        public boolean validateEmail(AppCompatActivity activity, String email) {
 //check if @ exists and you have only one
             String[] splitString = email.split("@");
             if (splitString.length != 2) {
@@ -123,7 +133,11 @@ import androidx.appcompat.app.AppCompatActivity;
                 if (!(LastPartOfDomain.charAt(i) >= 'a' && LastPartOfDomain.charAt(i) <= 'z')) {
                     Toast.makeText(activity, "Incorrect Username or passowrd", Toast.LENGTH_SHORT).show();
                     return false;
+
                 }
+                return true;
             }
-            return true;
         }
+    }
+
+

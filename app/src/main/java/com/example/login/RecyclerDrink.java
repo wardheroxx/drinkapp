@@ -14,7 +14,7 @@ import java.util.List;
 
 public class RecyclerDrink extends AppCompatActivity {
 
-    public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
+    public static class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
         private List<String> mData;
         private LayoutInflater mInflater;

@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseServices fbs;
-    private Utilities utls;
+    private UtilitiesClass utls;
     private EditText etusername,etpassword;
 
     @Override
@@ -28,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etusername=findViewById(R.id.etUsernameSignup);
         etpassword=findViewById(R.id.etPasswordSignup);
-        utls= Utilities.getInstance();
+        utls= UtilitiesClass.getInstance();
         fbs=FirebaseServices.getInstance();
     }
 
@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 else
                                 {
 
-                                    Toast.makeText(signUp.SignUpActivity.this, "Username or password is empty!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignUpActivity.this, "Username or password is empty!", Toast.LENGTH_SHORT).show();
                                     return;
                                 }
                             }

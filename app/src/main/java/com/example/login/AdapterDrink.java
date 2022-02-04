@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,7 +25,7 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
         }
 
         // inflates the row layout from xml when needed
-        ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = mInflater.inflate(R.layout.row, parent, false);
             return new AdapterDrink.ViewHolder(view);
         }
@@ -32,8 +33,8 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
         // binds the data to the TextView in each row
         @Override
         public void onBindViewHolder(AdapterDrink.ViewHolder holder, int position) {
-          Drinkrest = mData.get(position);
-            holder.tvName.setText(rest.getName());
+          Drink drink = mData.get(position);
+            holder.tvName.setText(drink.getName());
             //holder.ivPhoto.setImageDrawable(rest.getPhoto());
         }
 
@@ -47,12 +48,14 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
         // stores and recycles views as they are scrolled off screen
         public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
             TextView tvName;
+            TextView tvprice;
             ImageView ivPhoto;
 
             ViewHolder(View itemView) {
                 super(itemView);
-                tvName = itemView.findViewById(R.id.tvNameRestRow);
-                ivPhoto = itemView.findViewById(R.id.ivPhotoRestRow);
+                tvName = itemView.findViewById(R.id.namerow);
+                tvprice = itemView.findViewById(R.id.pricerow);
+                ivPhoto = itemView.findViewById(R.id.Imdrink);
                 itemView.setOnClickListener(this);
             }
 
@@ -63,7 +66,7 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
         }
 
         // convenience method for getting data at click position
-       DrinkgetItem(int id) {
+       Drink DrinkgetItem(int id) {
             return mData.get(id);
         }
 
@@ -77,4 +80,4 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
             void onItemClick(View view, int position);
         }
     }
-}
+

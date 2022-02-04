@@ -4,25 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#457B9D"
     tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/whisky"
-        android:layout_width="228dp"
-        android:layout_height="66dp"
-        android:ems="10"
-        android:hint="drink name"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="275dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="421dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-9dp"
+        tools:srcCompat="@drawable/dada" />
 
     <EditText
         android:id="@+id/DrNam.Whisky"
@@ -31,16 +22,16 @@
         android:ems="10"
         android:hint="drink name"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="59dp" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="491dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
-        tools:layout_editor_absoluteX="156dp"
-        tools:layout_editor_absoluteY="574dp" />
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="597dp" />
 
     <EditText
         android:id="@+id/DrTyp.Whisky"
@@ -49,7 +40,7 @@
         android:ems="10"
         android:hint="drink type"
         android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="93dp"
-        tools:layout_editor_absoluteY="162dp" />
+        tools:layout_editor_absoluteX="80dp"
+        tools:layout_editor_absoluteY="383dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
