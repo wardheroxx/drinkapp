@@ -17,18 +17,18 @@ import androidx.appcompat.app.AppCompatActivity;
  //   }
 
 
-    public class UtilitiesClass {
+    public class Utilities {
         //singleton instance
-        private static UtilitiesClass instance;
+        private static Utilities instance;
 
         //c'tor
-        public UtilitiesClass() {
+        public Utilities() {
 
         }
 
-        public static UtilitiesClass getInstance() {
+        public static Utilities getInstance() {
             if (instance == null)
-                instance = new UtilitiesClass();
+                instance = new Utilities();
             return instance;
         }
 

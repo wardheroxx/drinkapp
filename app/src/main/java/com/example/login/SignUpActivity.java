@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseServices fbs;
-    private UtilitiesClass utls;
+    private Utilities utls;
     private EditText etusername,etpassword;
 
     @Override
@@ -28,7 +28,7 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         etusername=findViewById(R.id.etUsernameSignup);
         etpassword=findViewById(R.id.etPasswordSignup);
-        utls= UtilitiesClass.getInstance();
+        utls= Utilities.getInstance();
         fbs=FirebaseServices.getInstance();
     }
 

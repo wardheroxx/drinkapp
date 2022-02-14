@@ -1,16 +1,5 @@
 package com.example.login;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.Toast;
-
-import java.io.IOException;
-
-import static androidx.core.app.ActivityCompat.startActivityForResult;
-
 enum DrinkType
 {
     whisky,arak,beer,cognac,tequila,vodka,wine,champagne
@@ -35,6 +24,12 @@ class Drink {
         this.liters = liters;
         this.type = type;
     }
+
+    public Drink(String name, String description, String address, String valueOf, String photo, String phone) {
+
+    }
+
+    public static void values(){}
 
     public String getName() {
         return name;
