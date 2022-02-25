@@ -13,7 +13,7 @@ class Drink {
     private int liters;
     private DrinkType type;
 
-    public Drink() {
+    public Drink(String name, String num, String price, String liters) {
     }
 
     public Drink(String name, String photo, int num, int price, int liters, DrinkType type) {
@@ -24,12 +24,6 @@ class Drink {
         this.liters = liters;
         this.type = type;
     }
-
-    public Drink(String name, String description, String address, String valueOf, String photo, String phone) {
-
-    }
-
-    public static void values(){}
 
     public String getName() {
         return name;

@@ -3,4 +3,11 @@
     <item name="etUsernameSignup" type="id" />
     <item name="etPasswordSignup" type="id" />
     <item name="tvRestAllRest" type="id" />
+    <item name="etUsernameMain" type="id" />
+    <item name="tvDescriptionRestDetails" type="id" />
+    <item name="tvNameRestDetails" type="id" />
+    <item name="tvAddressRestDetails" type="id" />
+    <item name="tvCategoryRestDetails" type="id" />
+    <item name="tvPhoneRestDetails" type="id" />
+    <item name="ivPhotoRestDetails" type="id" />
 </resources>

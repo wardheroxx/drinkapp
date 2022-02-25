@@ -29,15 +29,15 @@ import java.io.IOException;
 import java.util.UUID;
 
 public class AddDrinkActivity2 extends AppCompatActivity {
-    private static final String TAG = "AddRestActivity";
+    private static final String TAG = "AddDrinkActivity2";
     //private static final java.util.UUID UUID = "";
-    private EditText etName, etDesc, etAddress, etPhone;
-    private Spinner spCat;
+    private EditText etName, etNum, etPrice, etLiters;
     private ImageView ivPhoto;
     private FirebaseServices fbs;
     private Uri filePath;
     StorageReference storageReference;
-    private String drnkCat;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,37 +49,35 @@ public class AddDrinkActivity2 extends AppCompatActivity {
     }
 
     private void connectComponents() {
-        etName = findViewById(R.id.etNameAddRest);
-        etDesc = findViewById(R.id.etDescriptionAddRest);
-        etAddress = findViewById(R.id.etAddressAddRest);
-        etPhone = findViewById(R.id.etPhoneAddRest);
-        spCat = findViewById(R.id.spRestCatAddRest);
-        ivPhoto = findViewById(R.id.ivPhotoAddRest);
+        etName = findViewById(R.id.editTextTextPersonName);
+        etNum = findViewById(R.id.editTextTextPersonName2);
+        etPrice = findViewById(R.id.editTextTextPersonName3);
+        etLiters= findViewById(R.id.editTextTextPersonName4);
+        ivPhoto = findViewById(R.id.imageView3);
         fbs = FirebaseServices.getInstance();
-        spCat.setAdapter(new ArrayAdapter<Drink>(this, android.R.layout.simple_list_item_1, Drink.values()));
+
         storageReference = fbs.getStorage().getReference();
     }
 
     public void add(View view) {
         // check if any field is empty
-        String name, description, address, phone, category, photo;
+        String name, num, price, liters, category, photo;
         name = etName.getText().toString();
-        description = etDesc.getText().toString();
-        address = etAddress.getText().toString();
-        phone = etPhone.getText().toString();
-        category = spCat.getSelectedItem().toString();
+        num =  etNum.getText().toString();
+        price = etPrice.getText().toString();
+        liters =  etLiters.getText().toString();
         if (ivPhoto.getDrawable() == null)
             photo = "no_image";
         else photo = storageReference.getDownloadUrl().toString();
 
-        if (name.trim().isEmpty() || description.trim().isEmpty() || address.trim().isEmpty() ||
-                phone.trim().isEmpty() || category.trim().isEmpty() || photo.trim().isEmpty())
+        if (name.trim().isEmpty() || num.trim().isEmpty() || price.trim().isEmpty() ||
+                liters.trim().isEmpty() ||  photo.trim().isEmpty())
         {
             Toast.makeText(this, R.string.err_fields_empty, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Drink drink = new Drink(name, description, address, drnkCat.valueOf(category), photo, phone);
+        Drink drink = new Drink(name, num, price, liters);
         fbs.getFire().collection("restaurants")
                 .add(drink)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

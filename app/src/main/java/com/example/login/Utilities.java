@@ -8,13 +8,6 @@ import com.example.login.MainActivity;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-//public class Utilities {
-
-  // public static Utilities getInstance() {
- //   }
-
-    //public boolean validatePassword(SignUpActivity signUpActivity, String password) {
- //   }
 
 
     public class Utilities {
@@ -137,6 +130,8 @@ import androidx.appcompat.app.AppCompatActivity;
                 }
                 return true;
             }
+
+            return false;
         }
     }
 
