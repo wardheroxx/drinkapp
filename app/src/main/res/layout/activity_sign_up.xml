@@ -10,28 +10,46 @@
         android:id="@+id/UsernameSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="163dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="64dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="username..."
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="163dp" />
+        app:layout_constraintBottom_toTopOf="@+id/passwordSignUP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSignUpInSignUpAc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="264dp"
         android:onClick="Signup"
         android:text="sign up"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="387dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordSignUP" />
 
     <EditText
         android:id="@+id/passwordSignUP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="70dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="password"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="272dp" />
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUpInSignUpAc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UsernameSignUp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

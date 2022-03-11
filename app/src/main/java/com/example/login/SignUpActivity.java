@@ -23,9 +23,6 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
-        setContentView(R.layout.activity_main);
         etusername=findViewById(R.id.etUsernameSignup);
         etpassword=findViewById(R.id.etPasswordSignup);
         utls= Utilities.getInstance();
@@ -46,7 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
         if (!(utls.validatePassword(this,password)|| utls.validateEmail(this,username)))
             return;
 
-        fbs.getAuth().signInWithEmailAndPassword(username, password)
+        fbs.getAuth().createUserWithEmailAndPassword(username, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>()
                         {
                             @Override

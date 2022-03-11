@@ -1,6 +1,8 @@
 package com.example.login;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +17,25 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
 
         private List<Drink> mData;
         private LayoutInflater mInflater;
-    private RecyclerDrink.MyRecyclerViewAdapter.ItemClickListener mClickListener;
-    private Drink Drinkrest;
+        private Context context;
+
+        private final AdapterDrink.ItemClickListener mClickListener = new ItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+               Drink drink = mData.get(position);
+                Intent i = new Intent(context, DetailsDrinkAc.class);
+                i.putExtra("drink", (Parcelable) drink);
+                i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(i);
+
+            }
+        };
 
     // data is passed into the constructor
         AdapterDrink(Context context, List<Drink> data) {
             this.mInflater = LayoutInflater.from(context);
             this.mData = data;
+          this.context= context;
         }
 
         // inflates the row layout from xml when needed
@@ -70,10 +84,6 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
             return mData.get(id);
         }
 
-        // allows clicks events to be caught
-        void setClickListener(RecyclerDrink.MyRecyclerViewAdapter.ItemClickListener itemClickListener) {
-            this.mClickListener = itemClickListener;
-        }
 
         // parent activity will implement this method to respond to click events
         public interface ItemClickListener {

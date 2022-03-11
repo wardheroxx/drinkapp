@@ -12,10 +12,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -49,11 +47,11 @@ public class AddDrinkActivity2 extends AppCompatActivity {
     }
 
     private void connectComponents() {
-        etName = findViewById(R.id.editTextTextPersonName);
-        etNum = findViewById(R.id.editTextTextPersonName2);
-        etPrice = findViewById(R.id.editTextTextPersonName3);
-        etLiters= findViewById(R.id.editTextTextPersonName4);
-        ivPhoto = findViewById(R.id.imageView3);
+        etName = findViewById(R.id.NameAddDrinkAc);
+        etNum = findViewById(R.id.NumberAddDrinkAc);
+        etPrice = findViewById(R.id.PriceAddDrinkAc);
+        etLiters= findViewById(R.id.LitersAddDrinkAc);
+        ivPhoto = findViewById(R.id.ivAddDrink);
         fbs = FirebaseServices.getInstance();
 
         storageReference = fbs.getStorage().getReference();
