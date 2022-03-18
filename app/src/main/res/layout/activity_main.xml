@@ -20,45 +20,74 @@
         android:id="@+id/TextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="111dp"
         android:layout_marginBottom="46dp"
         android:ems="10"
         android:hint="password"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/btnLoginMain"
-        app:layout_constraintStart_toStartOf="@+id/TextUsername" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/TextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/TextUsername" />
 
     <Button
         android:id="@+id/btnLoginMain"
-        android:onClick="login"
-        android:layout_width="wrap_content"
+        android:layout_width="88dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="173dp"
+        android:layout_marginBottom="95dp"
+        android:onClick="gotoAlldrink"
         android:text="Log In"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignUpMain"
-        app:layout_constraintStart_toStartOf="@+id/btnSignUpMain" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnSignUpMain"
+        app:layout_constraintTop_toBottomOf="@+id/TextPassword" />
 
     <EditText
         android:id="@+id/TextUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="13dp"
+        android:layout_marginBottom="51dp"
         android:ems="10"
         android:hint="Username"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/TextPassword"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/btnSignUpMain"
-        android:onClick="gotoSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="Sign Up"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="134dp"
+        android:layout_marginEnd="187dp"
+        android:layout_marginBottom="25dp"
+        android:onClick="gotoAddDrink"
+        android:text="Add Drinks"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/AllDrActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TextPassword" />
+
+    <Button
+        android:id="@+id/AllDrActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginBottom="27dp"
+        android:text="All Drinks"
+        android:onClick="gotoAlldrink"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSignUpMain"
+        app:layout_constraintTop_toBottomOf="@+id/TextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

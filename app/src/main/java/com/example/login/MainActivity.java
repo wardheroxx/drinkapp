@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Intent i = new Intent(MainActivity.this, AddDrinkActivity2.class);
+                            Intent i = new Intent(MainActivity.this, AllDrinkActivity.class);
                             startActivity(i);
 
                         } else {
@@ -65,11 +65,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    public void gotoSignup(View view) {
-        Intent i = new Intent(this, SignUpActivity.class);
-        startActivity(i);
     }
 
     public void gotoAddDrink(View view) {
