@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".RecyclerDrink">
 
+    <ImageView
+        android:id="@+id/recyIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="126dp"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

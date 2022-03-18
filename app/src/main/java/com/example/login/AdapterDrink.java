@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -39,12 +40,14 @@ public class AdapterDrink extends RecyclerView.Adapter<AdapterDrink.ViewHolder> 
         }
 
         // inflates the row layout from xml when needed
-        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        @NonNull
+        @Override
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = mInflater.inflate(R.layout.row, parent, false);
             return new AdapterDrink.ViewHolder(view);
         }
 
-        // binds the data to the TextView in each row
+    // binds the data to the TextView in each row
         @Override
         public void onBindViewHolder(AdapterDrink.ViewHolder holder, int position) {
           Drink drink = mData.get(position);
